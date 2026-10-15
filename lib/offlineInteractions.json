@@ -1,0 +1,170 @@
+[
+  {
+    "id": "warfarin-aspirin",
+    "drugA": ["warfarin", "coumadin", "marevan"],
+    "drugB": ["aspirin", "asa", "acetylsalicylic acid", "ecosprin"],
+    "severity": "HIGH",
+    "clinicalRisk": "High bleeding risk from combined anticoagulant and antiplatelet effect.",
+    "recommendedAction": "Avoid concurrent use unless specialist-directed; check INR and counsel on bleeding signs."
+  },
+  {
+    "id": "warfarin-ibuprofen",
+    "drugA": ["warfarin", "coumadin", "marevan"],
+    "drugB": ["ibuprofen", "nsaid", "brufen", "nurofen", "advil"],
+    "severity": "HIGH",
+    "clinicalRisk": "Severe GI bleeding risk when warfarin is combined with NSAIDs.",
+    "recommendedAction": "Prefer paracetamol for analgesia; if NSAID unavoidable, gastroprotect and monitor closely."
+  },
+  {
+    "id": "ciprofloxacin-theophylline",
+    "drugA": ["ciprofloxacin", "cipro", "cifran"],
+    "drugB": ["theophylline", "aminophylline"],
+    "severity": "HIGH",
+    "clinicalRisk": "Ciprofloxacin inhibits theophylline clearance, causing toxicity (tachycardia, seizures).",
+    "recommendedAction": "Avoid combination or reduce theophylline dose and monitor serum levels."
+  },
+  {
+    "id": "metformin-nsaid",
+    "drugA": ["metformin", "glucophage", "glycomet"],
+    "drugB": ["ibuprofen", "nsaid", "diclofenac", "naproxen", "contrast", "iodinated contrast", "contrast media"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Increased risk of lactic acidosis and renal impairment with NSAIDs or iodinated contrast.",
+    "recommendedAction": "Hold metformin around contrast procedures; assess eGFR and hydration before NSAIDs."
+  },
+  {
+    "id": "metformin-ciprofloxacin",
+    "drugA": ["metformin", "glucophage", "glycomet"],
+    "drugB": ["ciprofloxacin", "cipro", "cifran", "levofloxacin", "moxifloxacin", "fluoroquinolone"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Fluoroquinolones may alter glycemic control and warrant closer monitoring for lactic acidosis risk in metformin users with renal impairment.",
+    "recommendedAction": "Monitor blood glucose and renal function; counsel on hypo/hyperglycemia symptoms during the antibiotic course."
+  },
+  {
+    "id": "acei-potassium",
+    "drugA": ["lisinopril", "enalapril", "ramipril", "perindopril", "ace inhibitor", "acei", "captopril"],
+    "drugB": ["potassium", "potassium chloride", "kcl", "slow-k", "spironolactone"],
+    "severity": "HIGH",
+    "clinicalRisk": "Severe hyperkalemia from ACE inhibition plus potassium load or potassium-sparing diuretic.",
+    "recommendedAction": "Check serum potassium promptly; avoid routine K+ supplements unless monitored."
+  },
+  {
+    "id": "clopidogrel-omeprazole",
+    "drugA": ["clopidogrel", "plavix"],
+    "drugB": ["omeprazole", "losec", "prilosec"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Omeprazole may reduce CYP2C19 activation of clopidogrel and antiplatelet efficacy.",
+    "recommendedAction": "Prefer pantoprazole or another non-interacting PPI if gastroprotection is required."
+  },
+  {
+    "id": "ssri-nsaid",
+    "drugA": ["sertraline", "fluoxetine", "paroxetine", "escitalopram", "citalopram", "ssri"],
+    "drugB": ["ibuprofen", "nsaid", "aspirin", "diclofenac", "naproxen"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Additive GI bleeding risk from SSRI platelet effects plus NSAID mucosal injury.",
+    "recommendedAction": "Consider gastroprotection; use lowest effective NSAID dose or alternative analgesia."
+  },
+  {
+    "id": "methotrexate-nsaid",
+    "drugA": ["methotrexate", "mtx"],
+    "drugB": ["ibuprofen", "nsaid", "diclofenac", "naproxen"],
+    "severity": "HIGH",
+    "clinicalRisk": "NSAIDs can reduce methotrexate clearance and precipitate acute toxicity.",
+    "recommendedAction": "Avoid NSAIDs with high-dose MTX; monitor FBC/LFTs if co-prescription unavoidable."
+  },
+  {
+    "id": "digoxin-amiodarone",
+    "drugA": ["digoxin", "lanoxin"],
+    "drugB": ["amiodarone", "cordarone"],
+    "severity": "HIGH",
+    "clinicalRisk": "Amiodarone raises digoxin levels with risk of bradycardia and digoxin toxicity.",
+    "recommendedAction": "Halve digoxin dose when starting amiodarone; monitor digoxin level and ECG."
+  },
+  {
+    "id": "simvastatin-clarithromycin",
+    "drugA": ["simvastatin", "zocor"],
+    "drugB": ["clarithromycin", "erythromycin", "ketoconazole", "itraconazole"],
+    "severity": "HIGH",
+    "clinicalRisk": "CYP3A4 inhibition markedly increases simvastatin exposure and rhabdomyolysis risk.",
+    "recommendedAction": "Suspend simvastatin during macrolide/azole course; consider temporary statin hold."
+  },
+  {
+    "id": "sildenafil-nitrate",
+    "drugA": ["sildenafil", "viagra", "tadalafil", "cialis", "vardenafil"],
+    "drugB": ["nitrate", "nitroglycerin", "glyceryl trinitrate", "gtn", "isosorbide", "isosorbide mononitrate"],
+    "severity": "HIGH",
+    "clinicalRisk": "Profound hypotension from combined PDE5 inhibitor and nitrate vasodilatation.",
+    "recommendedAction": "Absolute contraindication — do not co-administer."
+  },
+  {
+    "id": "lithium-nsaid",
+    "drugA": ["lithium", "lithium carbonate", "camcolit"],
+    "drugB": ["ibuprofen", "nsaid", "diclofenac", "naproxen"],
+    "severity": "HIGH",
+    "clinicalRisk": "NSAIDs reduce lithium clearance and can cause lithium toxicity.",
+    "recommendedAction": "Avoid NSAIDs; if needed, monitor lithium levels closely within days of change."
+  },
+  {
+    "id": "tramadol-ssri",
+    "drugA": ["tramadol"],
+    "drugB": ["sertraline", "fluoxetine", "paroxetine", "escitalopram", "citalopram", "ssri", "maoi"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Serotonergic synergy raises risk of serotonin syndrome and seizures.",
+    "recommendedAction": "Prefer non-serotonergic analgesia; counsel on agitation, tremor, and fever."
+  },
+  {
+    "id": "verapamil-beta-blocker",
+    "drugA": ["verapamil", "diltiazem"],
+    "drugB": ["atenolol", "metoprolol", "propranolol", "bisoprolol", "beta blocker", "beta-blocker"],
+    "severity": "HIGH",
+    "clinicalRisk": "Additive negative chronotropy/inotropy with risk of bradycardia and heart block.",
+    "recommendedAction": "Avoid oral verapamil with beta-blockers; monitor pulse and ECG if unavoidable."
+  },
+  {
+    "id": "allopurinol-azathioprine",
+    "drugA": ["allopurinol", "zyloric"],
+    "drugB": ["azathioprine", "mercaptopurine", "6-mp"],
+    "severity": "HIGH",
+    "clinicalRisk": "Xanthine oxidase inhibition causes life-threatening myelosuppression.",
+    "recommendedAction": "Reduce thiopurine dose to ~25% or avoid combination; monitor FBC closely."
+  },
+  {
+    "id": "warfarin-amiodarone",
+    "drugA": ["warfarin", "coumadin", "marevan"],
+    "drugB": ["amiodarone", "cordarone"],
+    "severity": "HIGH",
+    "clinicalRisk": "Amiodarone potentiates warfarin anticoagulation and bleeding risk.",
+    "recommendedAction": "Reduce warfarin dose empirically and intensify INR monitoring for weeks."
+  },
+  {
+    "id": "metformin-alcohol",
+    "drugA": ["metformin", "glucophage", "glycomet"],
+    "drugB": ["alcohol", "ethanol"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Heavy alcohol use with metformin increases lactic acidosis risk.",
+    "recommendedAction": "Counsel on alcohol limits; hold metformin if acute illness or binge drinking."
+  },
+  {
+    "id": "ciprofloxacin-tizanidine",
+    "drugA": ["ciprofloxacin", "cipro", "cifran"],
+    "drugB": ["tizanidine", "zanaflex"],
+    "severity": "HIGH",
+    "clinicalRisk": "Ciprofloxacin markedly elevates tizanidine levels causing hypotension and sedation.",
+    "recommendedAction": "Contraindicated combination — choose alternative antibiotic or muscle relaxant."
+  },
+  {
+    "id": "acei-nsaid",
+    "drugA": ["lisinopril", "enalapril", "ramipril", "perindopril", "ace inhibitor", "acei"],
+    "drugB": ["ibuprofen", "nsaid", "diclofenac", "naproxen"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Triple-whammy renal injury risk (ACEI + NSAID ± diuretic) with reduced GFR.",
+    "recommendedAction": "Avoid chronic NSAIDs; check creatinine/electrolytes if short course required."
+  },
+  {
+    "id": "fluoxetine-tamoxifen",
+    "drugA": ["fluoxetine", "paroxetine"],
+    "drugB": ["tamoxifen", "nolvadex"],
+    "severity": "MODERATE",
+    "clinicalRisk": "Strong CYP2D6 inhibition may reduce formation of active tamoxifen metabolite.",
+    "recommendedAction": "Prefer a weak-CYP2D6 SSRI (e.g., sertraline/citalopram) if antidepressant needed."
+  }
+]

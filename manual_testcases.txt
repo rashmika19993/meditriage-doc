@@ -1,0 +1,111 @@
+MediTriage AI — Manual Test Cases
+=================================
+Prerequisite: Run `npm run dev` and open http://localhost:3000
+For online tests: GEMINI_API_KEY set in .env.local
+For offline tests: remove/empty the key or simulate API failure
+
+
+TC-01: Upload a local prescription image and extract
+----------------------------------------------------
+Steps:
+1. Click the upload dropzone (or drag a file onto it).
+2. Select a PNG, JPEG, or WebP prescription image under 10MB.
+3. Confirm preview thumbnail shows.
+4. Click "Extract & Screen Prescription".
+5. Wait until extraction finishes.
+
+Expected:
+- Preview displays the uploaded image.
+- Extracted medication cards appear (brand, active ingredient, dose, frequency, confidence).
+- Interaction alerts and briefing render based on extracted drugs.
+
+
+TC-02: Clear image resets intake
+--------------------------------
+Steps:
+1. Upload any image so a preview is visible.
+2. Click "Clear Image".
+
+Expected:
+- Preview is removed.
+- Dropzone returns to the empty upload state.
+- Select Image remains usable.
+
+
+TC-03: Reject non-image / unsupported file
+------------------------------------------
+Steps:
+1. Attempt to upload a non-image file (e.g. .pdf, .txt, .docx) via the file picker or drag-and-drop.
+
+Expected:
+- File is not accepted as a prescription image.
+- No valid medication extraction starts from that file.
+- UI remains usable (can still upload a valid image).
+
+
+TC-04: Human review badge for low confidence
+--------------------------------------------
+Steps:
+1. Run extraction on an unclear/handwritten image (or any result with low confidence).
+2. Inspect medication cards where confidence is below 0.70 or review is flagged.
+
+Expected:
+- Amber badge text: "[⚠️ Human Review Required: Low OCR Confidence]".
+- Fallback/human-review banner may also appear when review is required.
+- Brand, active ingredient, dosage, and frequency fields remain editable.
+
+
+TC-05: Edit medication and re-evaluate interactions
+---------------------------------------------------
+Steps:
+1. Complete extraction so medications are listed.
+2. Edit an active ingredient or brand name on a card (e.g. change a drug to create/remove a known pair).
+3. Click "Re-evaluate Interactions".
+
+Expected:
+- Interaction alerts refresh without requiring a new image upload.
+- Briefing updates to match the edited list.
+- No full re-OCR of the image is required for this action.
+
+
+TC-06: Add and delete medications manually
+------------------------------------------
+Steps:
+1. After extraction (or with an empty list), click "Add New Medication".
+2. Fill brand name, active ingredient, dosage, and frequency.
+3. Click "Re-evaluate Interactions".
+4. Click "Delete" on one medication card.
+5. Re-evaluate again.
+
+Expected:
+- New blank/editable medication card is added.
+- Deleted medication disappears from the list.
+- Interaction results change to reflect the current list only.
+- Re-evaluate with zero medications shows an error asking to add at least one.
+
+
+TC-07: Export clinical briefing to clipboard
+--------------------------------------------
+Steps:
+1. Complete a successful triage so a clinical briefing is visible.
+2. Click "Export Clinical Briefing".
+
+Expected:
+- Button indicates success (e.g. "Copied").
+- Pasting into a text editor shows the clinical briefing / summary content.
+
+
+TC-08: Offline / API outage fallback
+------------------------------------
+Steps:
+1. Remove or empty GEMINI_API_KEY in .env.local and restart `npm run dev`
+   (or use a scenario that forces timeout / 503 / 429).
+2. Upload any prescription image.
+3. Click "Extract & Screen Prescription".
+
+Expected:
+- Offline banner is displayed.
+- OCR cannot invent line items without the model.
+- Prompt appears to add medications manually and re-evaluate.
+- After adding known interacting drugs (e.g. Warfarin + Aspirin), re-evaluate screens against the embedded matrix.
+- App remains usable for manual edits and "Re-evaluate Interactions".
